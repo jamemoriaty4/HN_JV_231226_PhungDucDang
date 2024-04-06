@@ -118,7 +118,7 @@ public class Product implements IProduct, Serializable {
         System.out.println("nhap gia ban ");
         this.exportPrice = InputMethods.getFloat();
 
-        System.out.println("nhap trang thai cua san pham");
+        System.out.println("nhap trang thai cua san pham(true: có , flase: không)");
         this.productStatus = InputMethods.getBoolean();
 
 this.interest = exportPrice-importPrice;
@@ -151,7 +151,7 @@ this.interest = exportPrice-importPrice;
     }
 
     public List<Product> sortByExportPrice2() {
-        return products.stream().sorted(Comparator.comparingDouble(Product::getExportPrice)).toList();
+        return products.stream().sorted(Comparator.comparingDouble(Product::getExportPrice).reversed()).toList();
     }
 
     public List<Product> sortByInterest1() {
@@ -159,7 +159,9 @@ this.interest = exportPrice-importPrice;
     }
 
     public List<Product> sortByInterest2() {
-        return products.stream().sorted(Comparator.comparingDouble(Product::getInterest)).toList();
+        return products.stream()
+                .sorted(Comparator.comparingDouble(Product::getInterest).reversed())
+                .toList();
     }
 
     public Product findByID(int id) {

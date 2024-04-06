@@ -78,7 +78,7 @@ public class ProductManagement {
         System.out.println("1.Tên (Tăng)");
         System.out.println("2.Tên (giam)");
         System.out.println("3.gia (Tăng)");
-        System.out.println("4.Tên (Giam)");
+        System.out.println("4.gia (Giam)");
         System.out.println("5.Lai (Tăng)");
         System.out.println("6.Lai (giam)");
         byte choice = InputMethods.getByte();
